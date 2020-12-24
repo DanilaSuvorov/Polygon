@@ -1,10 +1,10 @@
-C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.exe.config
-C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.exe
-C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.pdb
-C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.csprojAssemblyReference.cache
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.Form1.resources
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.Properties.Resources.resources
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.csproj.GenerateResource.cache
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.exe.config
+C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.exe
+C:\Users\admin\source\repos\Mno\Mno\bin\Debug\Mno.pdb
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.exe
 C:\Users\admin\source\repos\Mno\Mno\obj\Debug\Mno.pdb
