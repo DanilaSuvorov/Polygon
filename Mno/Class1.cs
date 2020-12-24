@@ -36,7 +36,7 @@ namespace Mno
         }
         public override void dr(Graphics paper)
         {
-            SolidBrush brush = new SolidBrush(Color.Red);
+            SolidBrush brush = new SolidBrush(Color.Blue);
             if (e == 1) paper.FillRectangle(brush, x1 - R / 2, y1 - R / 2, R, R);
         }
     }
@@ -47,13 +47,13 @@ namespace Mno
         }
         public override bool check(int x, int y)
         {
-            if ((x - x1) * (x - x1) + (y - y1) * (y - y1) <= R * R / 4) return true;
+            if((x - x1) * (x - x1) + (y - y1) * (y - y1) <= R * R / 4) return true;
             return false;
         }
         public override void dr(Graphics paper)
         {
-            SolidBrush brush = new SolidBrush(Color.Red);
-            if (e == 1) paper.FillEllipse(brush, x1 - R / 2, y1 - R / 2, R, R);
+            SolidBrush brush = new SolidBrush(Color.Green);
+            if(e == 1) paper.FillEllipse(brush, x1 - R / 2, y1 - R / 2, R, R);
         }
     }
     class triangle : Vertex
@@ -68,7 +68,7 @@ namespace Mno
         }
         public override void dr(Graphics paper)
         {
-            SolidBrush brush = new SolidBrush(Color.Red);
+            SolidBrush brush = new SolidBrush(Color.Yellow);
             if (e == 1)
             {
                 Point point1 = new Point(x1, y1 - R / 2);

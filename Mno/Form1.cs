@@ -14,18 +14,14 @@ namespace Mno
         int x1 = 100;
         int i = 0;
         int y1 = 100;
-        bool above;
-        bool below;
+        bool up;
+        bool down;
 
         public Form1()
         {
             shaper = new Mno.circle(0, 0);
 
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -55,7 +51,7 @@ namespace Mno
                         vert.Add(shaper);
                     }
                 }
-                vert[i].existance = 1;
+                vert[i].e = 1;
                 this.Invalidate();
                 i++;
             }
@@ -63,7 +59,7 @@ namespace Mno
             {
                 for (int j = 0; j < i; j++)
                 {
-                    if (vert[j].check(e.X, e.Y)) vert[j].existance = 0;
+                    if (vert[j].check(e.X, e.Y)) vert[j].e = 0;
                 }
                 this.Invalidate();
             }
@@ -73,27 +69,23 @@ namespace Mno
             foreach (Mno.Vertex shaper in vert)
             {
                 shaper.l = false;
-                if (shaper.existance == 1)
-                    shaper.paintshit(e.Graphics);
+                if (shaper.e == 1) shaper.dr(e.Graphics);
             }
             for (int i = 0; i < vert.Count; i++)
             {
                 for (int j = i + 1; j < vert.Count; j++)
                 {
-                    above = false;
-                    below = false;
-
+                    up = false;
+                    down = false;
                     for (int k = 0; k < vert.Count; k++)
                     {
                         if (k != i && k != j && i != j)
                         {
-
-                            if (((vert[k].y1 - vert[i].y1) * (vert[j].x1 - vert[i].x1)) > ((vert[k].x1 - vert[i].x1) * (vert[j].y1 - vert[i].y1)))
-                                above = true;
-                            else below = true;
+                            if (((vert[k].y1 - vert[i].y1) * (vert[j].x1 - vert[i].x1)) > ((vert[k].x1 - vert[i].x1) * (vert[j].y1 - vert[i].y1))) up = true;
+                            else down = true;
                         }
                     }
-                    if(!above || !below)
+                    if(!up || !down)
                     {
                         vert[i].l = true;
                         vert[j].l = true;
@@ -102,6 +94,23 @@ namespace Mno
                 }
             }
         }
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < vert.Count; i++)
+            {
+                if (!vert[i].l)
+                {
+                    vert[i].e = 0;
+                    this.Invalidate();
+                }
+                this.Invalidate();
+            }
+        }
+        private void треугольникToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            shape = 3;
+
+        }
         private void кругToolStripMenuItem_Click(object sender, EventArgs e)
         {
             shape = 1;
@@ -109,12 +118,6 @@ namespace Mno
         private void квадратToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             shape = 2;
-
-        }
-        private void треугольникToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            shape = 3;
-
         }
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -126,18 +129,6 @@ namespace Mno
                     vert[j].y1 = e.Y; 
                     this.Invalidate();
                 }
-            }
-        }
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            for (int i = 0; i < vert.Count; i++)
-            {
-                if (!vert[i].l)
-                {
-                    vert[i].existance = 0;
-                    this.Invalidate();
-                }
-                this.Invalidate();
             }
         }
     }
